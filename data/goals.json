@@ -1,0 +1,44 @@
+{
+    "items": [
+        {
+            "title": "My new goal"
+        },
+        {
+            "title": "learn to program",
+            "subtasks": [
+                {
+                    "task": "learn python"
+                },
+                {
+                    "task": "make afew apps or games a week"
+                }
+            ]
+        },
+        {
+            "title": "make a to-do/ goal app i actually use to help me organise my life",
+            "subtasks": [
+                {
+                    "task": "maki it into a app",
+                    "status": "[ ]"
+                },
+                {
+                    "task": "keep adding functionality",
+                    "status": "[ ]"
+                },
+                {
+                    "task": "make it able to mark subtasks as complete",
+                    "status": "[ ]"
+                }
+            ]
+        },
+        {
+            "title": "optimise todai.py",
+            "subtasks": [
+                {
+                    "task": "back funtionality",
+                    "status": "[ ]"
+                }
+            ]
+        }
+    ]
+}
