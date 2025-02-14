@@ -1,4 +1,7 @@
 todaienv/
 __pycache__/
 *.log
-data/goals.json # Ignore saved goal data
+# Ignore to-do and goal files
+data/goals.json
+data/todos.json
+
