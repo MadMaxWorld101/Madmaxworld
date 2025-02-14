@@ -1,15 +1,15 @@
-# TodaiNote  
+# **TodaiNote**  
 
-**TodaiNote** is a goal, subtask, and to-do manager designed to track tasks efficiently, keeping the mind clear and focused.  
-The goal is to develop a **goal, to-do, and prompt-based system** to optimize focus and time management.  
+**TodaiNote** is a goal, subtask, and to-do manager designed to track tasks efficiently, keeping your mind clear and focused.  
+The goal is to develop a **goal, to-do, and prompt-based system** that helps optimize focus and time management.  
 
 🚀 **Future Plans:**  
 Once the core functionality is stable, **AI integration** will enhance organization and decision-making.  
-The system may also evolve into a **companion app** for managing a personalized **prompt library**.  
+The system will evolve into a **companion app** for managing a personalized **prompt library**.  
 
 ---
 
-## 🔹 Version 0.1 Features  
+## 🔹 **Version 0.1 Features**  
 ✅ Add Goals  
 ✅ Add Subgoals  
 ✅ Add To-Dos  
@@ -23,17 +23,18 @@ The system may also evolve into a **companion app** for managing a personalized 
 
 ---
 
-## 🎯 Goals for Version 0.2  
+## 🎯 **Goals for Version 0.2**  
 🔹 AI Integration for Organization & Prioritization  
 🔹 Implement Prompt Library  
 🔹 Improve UI/UX  
-🔹 Extend to a Mobile / Desktop App  
+🔹 Extend to a Mobile/Desktop App  
 
-## 📜 Documentation  
+## 📜 **Documentation**  
 - [Old README Versions](docs/)
+
 ---
 
-## 📌 Notes & Future Ideas  
+## 📌 **Notes & Future Ideas**  
 - **Gamification:** Make goal tracking engaging with progress bars, streaks, or rewards.  
 - **AI Assistance:** Automate task prioritization based on past behavior.  
 - **Personalization:** Make it feel like a **grimoire/spell book**, replacing Obsidian for personal organization.  
@@ -42,7 +43,8 @@ The system may also evolve into a **companion app** for managing a personalized 
 
 ---
 
-## 🛠 Installation & Usage  
+## 🛠 **Installation & Usage**  
+
 ```sh
 # Clone the repository
 git clone https://github.com/MadMaxWorld101/Todai.git  
@@ -57,3 +59,21 @@ todaienv\Scripts\activate  # (Windows)
 # Run the app
 python src/todai.py  
 
+## 🎮 User Interaction Flow
+
+# 1.Choose your character (AI Assistants):
+Pick from available AI assistants, each with tasks tailored to your preferences.
+Interact with your assistant and perform selected tasks.
+# 2.	Task Management:
+	•	Add Goals & To-Dos: Add, view, and track progress on your goals and to-dos.
+	•	Completion Tracking: Mark tasks as complete when finished.
+# 3.	Navigation Improvements (Coming Soon):
+	•	Back Functionality: Quickly return to previous menus.
+# 4.	Prompt Library:
+	•	A growing list of tasks and assistants to make your workflow smarter.
+	•	AI-powered task prioritization will help automate decision-making.
+
+    "Next Steps:"
+	•	Continue refining the prompt library.
+	•	Focus on performance optimization and fixing the “back” navigation.
+	•	Expand with a more dynamic AI feature set.
