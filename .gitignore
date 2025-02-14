@@ -1,7 +1,8 @@
+# Ignore Python cache files, venvs, and logs
 todaienv/
 __pycache__/
 *.log
-# Ignore to-do and goal files
-data/goals.json
-data/todos.json
 
+# Ignore data (data and assistants)
+data/data.json
+data/assistants.json

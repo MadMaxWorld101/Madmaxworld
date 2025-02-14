@@ -1,112 +1,123 @@
 import json
-import os
-import subprocess
 
-# Set data directory and files
-DATA_DIR = os.path.join(os.path.dirname(__file__), "../data")
-GOALS_FILE = os.path.join(DATA_DIR, "goals.json")
-TODOS_FILE = os.path.join(DATA_DIR, "todos.json")
+# Load Data from JSON
+def load_data():
+    try:
+        with open("data.json", "r") as file:
+            return json.load(file)
+    except FileNotFoundError:
+        return {"goals": {"items": []}, "todos": {"items": []}, "prompts": {"assistants": [], "tasks": []}}
 
-# Ensure the data directory exists
-os.makedirs(DATA_DIR, exist_ok=True)
+data = load_data()
 
-def load_json(file_path):
-    """Loads JSON data from a file or creates a default empty structure if missing or empty."""
-    if not os.path.exists(file_path) or os.stat(file_path).st_size == 0:
-        data = {"items": []}
-        save_json(file_path, data)
-        return data
-
-    with open(file_path, "r") as file:
-        return json.load(file)
-
-def save_json(file_path, data):
-    """Saves JSON data to a file."""
-    with open(file_path, "w") as file:
-        json.dump(data, file, indent=4)
-
-def add_goal():
-    """Prompts the user for a goal and its subtasks."""
-    title = input("\n📌 Enter goal title: ").strip()
-    subtasks = []
-
-    # Add subtasks
+# 🚀 Display Main Menu
+def main_menu():
     while True:
-        subtask = input("  ➜ Enter subtask (or leave empty to finish): ").strip()
-        if not subtask:
-            break
-        # Each subtask is initialized with a "status" key
-        subtasks.append({"task": subtask, "status": "[ ]"})
-
-    # Ensure the goal always has the 'subtasks' key
-    goal = {"title": title, "subtasks": subtasks}
-
-    # Load existing goals, add new goal
-    goals = load_json(GOALS_FILE)
-    goals["items"].append(goal)
-    save_json(GOALS_FILE, goals)
-    print(f"✅ Goal '{title}' added successfully!\n")
-
-def add_to_do():
-    to_do_item = input("📝 Enter to-do item: ")
-    todos = load_json(TODOS_FILE)  # Load current To-Dos
-    todos["items"].append({"task": to_do_item, "status": "[ ]"})  # Add new To-Do with status
-    save_json(TODOS_FILE, todos)  # Save updated list of To-Dos to the JSON file
-    print(f"✅ To-Do '{to_do_item}' added successfully!")
-
-def view_data():
-    goals = load_json(GOALS_FILE)  # Load goals
-    todos = load_json(TODOS_FILE)  # Load to-dos
-    markdown = "# Goals & To-Dos\n\n"
-
-    # Display Goals
-    for goal in goals["items"]:
-        markdown += f"### Goal: {goal['title']}\n"
-        for subtask in goal.get("subtasks", []):  # Safe access to subtasks, even if it's missing
-            status = subtask.get('status', '[ ]')  # Default to '[ ]' if 'status' key is missing
-            markdown += f"  - {status} {subtask.get('task', 'Unknown Task')}\n"
-
-    # Display To-Dos
-    markdown += "\n### To-Dos\n"
-    for todo in todos["items"]:
-        markdown += f"  - {todo['status']} {todo['task']}\n"  # Showing 'status' and 'task'
-
-    print(markdown)  # Output the markdown formatted list
-
-    subprocess.run(["glow", "-"], input=markdown, text=True)
-
-def display_menu():
-    """Displays the main menu using 'glow'."""
-    menu_text = """
-# 🏆 TodaiNote Task Manager
-
-**Choose an option:**
-1️⃣  Add a Goal
-2️⃣  Add a To-Do
-3️⃣  View Goals & To-Dos
-4️⃣  Exit
-
-👉 Enter your choice: 
-"""
-    subprocess.run(["glow", "-"], input=menu_text, text=True)
-
-def main():
-    """Handles user input in a loop."""
-    while True:
-        display_menu()
-        choice = input().strip()
+        print("\n🏆 TodaiNote Task Manager\n")
+        print(" 1️⃣  Add a Goal")
+        print(" 2️⃣  Add a To-Do")
+        print(" 3️⃣  View Goals & To-Dos")
+        print(" 4️⃣  Mark a To-Do as Complete")
+        print(" 5️⃣  View AI Assistants")
+        print(" 6️⃣  Exit\n")
+        choice = input("👉 Enter your choice: ").strip()
 
         if choice == "1":
             add_goal()
         elif choice == "2":
-            add_to_do()
+            add_todo()
         elif choice == "3":
-            view_data()
+            view_tasks()
         elif choice == "4":
-            print("\n👋 Exiting TodaiNote. See you next time!\n")
+            mark_todo_complete()
+        elif choice == "5":
+            view_assistants()
+        elif choice == "6":
+            print("🚪 Exiting TodaiNote...")
             break
         else:
-            print("\n❌ Invalid choice. Please enter 1, 2, 3, or 4.\n")
+            print("⚠️ Invalid choice. Please enter 1-6.")
 
+# ✏️ Add a Goal
+def add_goal():
+    title = input("\n🎯 Enter goal title: ").strip()
+    data["goals"]["items"].append({"title": title, "subtasks": []})
+    print(f"✅ Goal '{title}' added!")
+
+# ✅ Add a To-Do
+def add_todo():
+    task = input("\n📝 Enter To-Do: ").strip()
+    data["todos"]["items"].append({"task": task, "status": "incomplete"})
+    print(f"✅ To-Do '{task}' added!")
+
+# 📂 View Goals & To-Dos
+def view_tasks():
+    print("\n🏆 Goals & To-Dos\n")
+    
+    # Display Goals
+    print("## 🎯 Goals")
+    for goal in data["goals"]["items"]:
+        print(f"  - {goal['title']}")
+        for sub in goal.get("subtasks", []):
+            print(f"    - {sub['task']} [{sub['status']}]")
+    
+    # Display To-Dos
+    print("\n## ✅ To-Dos")
+    for todo in data["todos"]["items"]:
+        print(f"  - {todo['task']} [{todo['status']}]")
+
+# ✅ Mark To-Do as Complete
+def mark_todo_complete():
+    print("\n✅ To-Dos")
+    for i, todo in enumerate(data["todos"]["items"]):
+        print(f" {i + 1}. {todo['task']} [{todo['status']}]")
+
+    try:
+        choice = int(input("\n🔢 Select task number to mark complete: ")) - 1
+        if 0 <= choice < len(data["todos"]["items"]):
+            data["todos"]["items"][choice]["status"] = "complete"
+            print("✅ Task marked as complete!")
+        else:
+            print("⚠️ Invalid task number.")
+    except ValueError:
+        print("⚠️ Please enter a valid number.")
+
+# 🧠 View AI Assistants
+def view_assistants():
+    print("\n🧠 AI Assistants\n")
+    for i, assistant in enumerate(data["prompts"]["assistants"]):
+        print(f" {i + 1}. {assistant['name']} - {assistant['description']}")
+
+    try:
+        choice = int(input("\n🔢 Choose an assistant (or 0 to return): ").strip()) - 1
+        if choice == -1:
+            return
+        elif 0 <= choice < len(data["prompts"]["assistants"]):
+            interact_with_assistant(data["prompts"]["assistants"][choice])
+        else:
+            print("⚠️ Invalid selection.")
+    except ValueError:
+        print("⚠️ Please enter a valid number.")
+
+# 🎭 Interact with AI Assistant
+def interact_with_assistant(assistant):
+    print(f"\n🤖 {assistant['name']} - {assistant['description']}\n")
+
+    # Display AI Tasks
+    for i, task in enumerate(data["prompts"]["tasks"]):
+        print(f" {i + 1}. {task['name']} - {task['details']}")
+
+    try:
+        choice = int(input("\n🔢 Choose a task (or 0 to return): ").strip()) - 1
+        if choice == -1:
+            return
+        elif 0 <= choice < len(data["prompts"]["tasks"]):
+            print(f"\n🛠️ Performing: {data['prompts']['tasks'][choice]['name']}\n")
+        else:
+            print("⚠️ Invalid selection.")
+    except ValueError:
+        print("⚠️ Please enter a valid number.")
+
+# Start the app
 if __name__ == "__main__":
-    main()
+    main_menu()
