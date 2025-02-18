@@ -1,0 +1,75 @@
+🎮 User Interaction Flow
+
+1. Choose Your Character (AI Assistants)
+
+Pick from available AI assistants, each with tasks tailored to your preferences.
+Interact with your assistant to perform selected tasks.
+
+2. Task Management
+	•	Add Goals & To-Dos: Add, view, and track progress on your goals and to-dos.
+	•	Completion Tracking: Mark tasks as complete when finished.
+
+3. Navigation Improvements (Coming Soon)
+	•	Back Functionality: Quickly return to previous menus for smoother navigation.
+
+4. Prompt Library
+	•	A growing list of tasks and assistants to make your workflow smarter.
+	•	AI-powered task prioritization will help automate decision-making based on your behaviors and goals.
+
+	
+
+
+🧩 Next Steps:
+	•	Continue refining the prompt library with dynamic prompts based on your evolving workflow.
+	•	Focus on performance optimization and fixing the “back” navigation for improved usability.
+	•	Expand with dynamic AI features that automatically adjust task priorities and workflows based on real-time analysis.
+	•	Begin exploring the gamification system to keep motivation high through rewards, progress bars, and streak bonuses.
+
+
+
+
+💡 Advice for Development Focus & Progress
+
+Focus on Iteration
+
+To avoid getting stuck in hyper-focus, break each feature down into smaller tasks and create a progress checklist. This will help you keep a clear overview of what needs to be done and ensure steady progress.
+
+Start with Core Features
+	•	For now, prioritize AI-assisted task prioritization and prompt refinement. Start simple, and slowly expand as you integrate more complex AI features.
+	•	Don’t worry about making it perfect. Focus on functionality first, and iterate to refine as you go.
+
+Use Time Management Techniques
+
+Since you’ve mentioned struggles with focus and ADHD, try incorporating time management strategies like Pomodoro or time-boxing. Use your app as part of your workflow to help you stay on track.
+
+Balance Creativity & Productivity
+
+Channel your creativity into improving the user experience and app features. At the same time, set clear, measurable goals (e.g., “Finish task prioritization logic by X date”) to ensure you’re moving forward with purpose.
+
+
+
+🤝 Contributing
+
+We welcome contributions! If you’d like to improve or add to the app, feel free to fork the repository, submit a pull request, or open an issue to discuss ideas.
+
+
+📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
+
+### Tips for Your Approach:
+1. **Use the README as a Central Guide:**  
+   As you mentioned, treat the README as the core prompt for each coding session. This will ensure both you and the AI are aligned on your vision. Before each session, refer to it to help focus your energy on the right tasks.
+
+2. **Gamification for Motivation:**  
+   Gamification elements like points, progress bars, and streak bonuses can help keep you motivated, especially when working on large or challenging features. This will also make the development process more engaging!
+
+3. **Iterative Development & Testing:**  
+   Implement features gradually—don’t worry about making everything perfect on the first go. Test small, incremental updates and adjust based on feedback from your usage.
+
+4. **Integrate AI Features Gradually:**  
+   Start by adding basic AI-assisted features (like task prioritization) and refine them over time. This will make the AI feel more integrated and valuable as the app evolves.
+
+Let me know if you’d like more specific advice on the gamification or AI components!

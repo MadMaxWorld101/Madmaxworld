@@ -1,8 +1,20 @@
-# Ignore Python cache files, venvs, and logs
+# Ignore Python cache files, virtual environments, and logs
 todaienv/
 __pycache__/
 *.log
+.env
 
-# Ignore data (data and assistants)
-data/data.json
-data/assistants.json
+
+# Ignore compiled Python files
+*.pyc
+*.pyo
+
+# Ignore VS Code and MacOS metadata files (if applicable)
+.vscode/
+.DS_Store
+
+
+
+# Ignore data files containing secrets
+data/*.json
+secrets/
