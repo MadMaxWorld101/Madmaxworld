@@ -1,79 +1,118 @@
-# **TodaiNote**  
+TodaiNote
 
-**TodaiNote** is a goal, subtask, and to-do manager designed to track tasks efficiently, keeping your mind clear and focused.  
-The goal is to develop a **goal, to-do, and prompt-based system** that helps optimize focus and time management.  
+TodaiNote is a goal, subtask, and to-do manager designed to track tasks efficiently, keeping your mind clear and focused.
+The goal is to develop a goal, to-do, and prompt-based system that helps optimize focus and time management.
 
-🚀 **Future Plans:**  
-Once the core functionality is stable, **AI integration** will enhance organization and decision-making.  
-The system will evolve into a **companion app** for managing a personalized **prompt library**.  
+🚀 Future Plans:
+Once the core functionality is stable, AI integration will enhance organization and decision-making.
+The system will evolve into a companion app for managing a personalized prompt library, offering additional focus optimization.
 
----
+🔹 Version 0.1 Features
 
-## 🔹 **Version 0.1 Features**  
-✅ Add Goals  
-✅ Add Subgoals  
-✅ Add To-Dos  
-✅ Basic CLI Interface  
+✅ Add Goals
+✅ Add Subgoals
+✅ Add To-Dos
+✅ Basic CLI Interface
 
-🚧 **Planned Additions for v0.1 (Before v0.2)**  
-- [ ] **Editing Functions:** Allow editing of existing goals, subgoals, and to-dos.  
-- [ ] **Completion Tracking:** Mark subgoals and to-dos as complete.  
-- [ ] **Timer-Based Alerts:** Notify users about upcoming to-dos.  
-- [ ] **Back Navigation:** Implement a simple way to return to previous menus.  
+🚧 Planned Additions for v0.1 (Before v0.2)
 
----
 
-## 🎯 **Goals for Version 0.2**  
-🔹 AI Integration for Organization & Prioritization  
-🔹 Implement Prompt Library  
-🔹 Improve UI/UX  
-🔹 Extend to a Mobile/Desktop App  
 
-## 📜 **Documentation**  
-- [Old README Versions](docs/)
+🎯 Goals for Version 0.2
 
----
+🔹 AI Integration for Organization & Prioritization
+🔹 Implement Prompt Library for task automation
+🔹 Improve UI/UX for a more intuitive experience
+🔹 Extend to a Mobile/Desktop App
 
-## 📌 **Notes & Future Ideas**  
-- **Gamification:** Make goal tracking engaging with progress bars, streaks, or rewards.  
-- **AI Assistance:** Automate task prioritization based on past behavior.  
-- **Personalization:** Make it feel like a **grimoire/spell book**, replacing Obsidian for personal organization.  
-- **Copy Function:** Quick duplication of tasks for repetitive goals.  
-- **Iterative Development:** Keep refining the app and improving data structures.  
+📜 Documentation
 
----
+Old README Versions
 
-## 🛠 **Installation & Usage**  
+AI Assistant Development
 
-```sh
+Phase 1: Coding Assistant
+
+Introduce a single AI assistant for coding-related tasks.
+
+Basic structure stored in assistant.json with attributes:
+________________
+----------------
+{
+  "assistants": {
+    "Coding Assistant": {
+      "description": "Helps with programming tasks, debugging, and explanations.",
+      "tasks": ["Code review", "Debugging", "Syntax help"]
+    }
+  }
+}
+________________
+----------------
+
+Phase 2: Pydantic Integration
+
+Validate assistant data before loading.
+
+Introduce structured models with pydantic for cleaner data management.
+________________
+----------------
+
+Phase 3: Multi-Agent Expansion
+
+Expand assistant capabilities (e.g., writing, productivity, research assistants).
+
+Allow interaction between different AI agents for collaboration.
+
+Store agent knowledge and tasks dynamically.
+
+
+_________________
+-----------------
+🛠 Installation & Usage
+
 # Clone the repository
-git clone https://github.com/MadMaxWorld101/Todai.git  
+git clone https://github.com/MadMaxWorld101/Todai.git
 
 # Navigate into the project folder
-cd TodaiNote  
+cd TodaiNote
 
 # Activate the virtual environment
 source todaienv/bin/activate  # (Mac/Linux)
 todaienv\Scripts\activate  # (Windows)
 
 # Run the app
-python src/todai.py  
+python src/todai.py
+___________________
+-------------------
+📌 Notes & Future Ideas
 
-## 🎮 User Interaction Flow
+Gamification
 
-# 1.Choose your character (AI Assistants):
-Pick from available AI assistants, each with tasks tailored to your preferences.
-Interact with your assistant and perform selected tasks.
-# 2.	Task Management:
-	•	Add Goals & To-Dos: Add, view, and track progress on your goals and to-dos.
-	•	Completion Tracking: Mark tasks as complete when finished.
-# 3.	Navigation Improvements (Coming Soon):
-	•	Back Functionality: Quickly return to previous menus.
-# 4.	Prompt Library:
-	•	A growing list of tasks and assistants to make your workflow smarter.
-	•	AI-powered task prioritization will help automate decision-making.
+Progress Tracking: Visual progress bars, streaks, or rewards for achieving goals.
 
-    "Next Steps:"
-	•	Continue refining the prompt library.
-	•	Focus on performance optimization and fixing the “back” navigation.
-	•	Expand with a more dynamic AI feature set.
+Motivation Boosters: Gamify task management to boost user engagement and consistency.
+
+Leveling Up: Unlock special features or content based on progress to keep users motivated.
+
+
+AI Assistance
+
+Automated Task Prioritization: Use AI to analyze past tasks and suggest the best order to tackle current goals and subtasks.
+
+Prompt Refinement: AI-powered suggestions for improving and automating task and goal prompts.
+
+Behavioral Tracking: AI detects user patterns (e.g., hyper-focus on certain tasks) and suggests adjustments to keep the user on track.
+
+Personalization & Workflow Improvement
+
+Grimoire/Spell Book Concept: A tool that replaces Obsidian for personal organization, where users store and manage goals, tasks, and prompts.
+
+Task Duplication: Quickly duplicate tasks for repetitive goals (e.g., daily habits, recurring deadlines).
+
+Dynamic Prompt Library: Continuously expand and refine the prompt library, utilizing AI to optimize workflows.
+
+Iterative Development
+
+Refinement: Focus on refining the app's core features, improving data structures, and ensuring scalability.
+
+User Feedback: Incorporate feedback from users (even if it's just yourself initially) to enhance features and usability.
